@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Optional;
+using Rethought.Optional;
 
 namespace Rethought.Retry
 {
@@ -32,7 +32,7 @@ namespace Rethought.Retry
             }
 
             cancellationTokenSource.Cancel();
-            return Option.None<T>();
+            return default;
         }
 
         public Task<Option<T>> RetryAsync<T>(
@@ -58,7 +58,7 @@ namespace Rethought.Retry
                 retries--;
             } while (retries > 0 && !cancellationToken.IsCancellationRequested);
 
-            return Option.None<T>();
+            return default;
         }
     }
 }
