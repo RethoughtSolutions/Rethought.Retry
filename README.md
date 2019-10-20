@@ -36,7 +36,7 @@ This `CancellationToken` is then being passed into the Func where your main work
 However, you don't have to use the `RetryService`. You can also create your own implementation of `ITrier`. 
 RetryService uses the default implementation `Trier`.  
 
-## Limitation
+## Limitations
 
 - The library is exclusively async. A workaround is to return `Task.CompletedTask` instead.
 - The retry methods expect to return a result
